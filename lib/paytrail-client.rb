@@ -1,0 +1,1 @@
+require 'paytrail_client'
