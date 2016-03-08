@@ -1,11 +1,8 @@
 module PaytrailClient
-  PaytrailConfiguration = Struct.new(:merchant_id, :merchant_secret)
-
-  class << self
-    def configuration
-      @config ||= PaytrailConfiguration.new
-      yield(@config) if block_given?
-      @config
-    end
+  PaytrailConfiguration = Struct.new(:merchant_id, :merchant_secret, :request_timeout)
+  def self.configuration
+    @config ||= PaytrailConfiguration.new(request_timeout: 30)
+    yield(@config) if block_given?
+    @config
   end
 end

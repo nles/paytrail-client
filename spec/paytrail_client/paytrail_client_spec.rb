@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 describe PaytrailClient do
   it { is_expected.to respond_to(:configuration) }
   it 'has a version number' do
@@ -18,7 +16,6 @@ describe PaytrailClient do
       end
       expect(described_class.configuration.merchant_id).to eq 1234
       expect(described_class.configuration.merchant_secret).to eq 'SECRET'
-
     end
 
     it 'raises on undefined configuration keys' do

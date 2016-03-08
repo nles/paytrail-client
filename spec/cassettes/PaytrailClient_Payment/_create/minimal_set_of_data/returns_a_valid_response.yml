@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://13466:6pKF4jkv97zmqBJ3ZL8gUw5DfT2NMQ@payment.paytrail.com/api-payment/create
+    body:
+      encoding: UTF-8
+      string: '{"orderNumber":"1234","currency":"EUR","locale":"en_US","urlSet":{"success":"http://www.example.org/success","failure":"http://www.example.org/failure","pending":"http://www.example.org/pending","notification":"http://www.example.org/notification"},"price":100.54}'
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Type:
+      - application/json
+      X-Verkkomaksut-Api-Version:
+      - '1'
+      Content-Length:
+      - '264'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Tue, 08 Mar 2016 19:59:19 GMT
+      Server:
+      - Apache
+      Expires:
+      - Thu, 19 Nov 1981 08:52:00 GMT
+      Cache-Control:
+      - no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Pragma:
+      - no-cache
+      Set-Cookie:
+      - SVPayment=oa4seu24ndimg194fgtmgc2ac5; path=/; domain=.paytrail.com; secure;HttpOnly;Secure
+      - svm_payment=!CE2QMPvuZikARspFurRqQB2VUNUOsDNGgirCNzbWDoPrNHfF5PZBfrGfvE0BxOT1SSsIYrssKRwkA8c=;
+        path=/
+      Content-Length:
+      - '224'
+      Content-Type:
+      - application/json
+    body:
+      encoding: UTF-8
+      string: '{"orderNumber":"1234","token":"jC8mpCWzURSwjJYKL73kLbf8UNRKgVGbg1gNkV3g2Lb8LTatsjESp9z8tBhkFTPh","url":"https:\/\/payment.paytrail.com\/payment\/load\/token\/jC8mpCWzURSwjJYKL73kLbf8UNRKgVGbg1gNkV3g2Lb8LTatsjESp9z8tBhkFTPh"}'
+    http_version: 
+  recorded_at: Tue, 08 Mar 2016 19:59:20 GMT
+recorded_with: VCR 3.0.1
