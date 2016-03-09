@@ -38,6 +38,21 @@ token = PaytrailClient::Payment.create(order_number: '1234',
 # Redirect to received url
 redirect_to(token['url'])
 
+
+# Verify payment
+
+begin
+  PaytrailClient::Payment.verify_payment!(
+                            params['ORDER_NUMBER'],
+                            params['TIMESTAMP'],
+                            params['PAID'],
+                            params['METHOD'],
+                            params['RETURN_AUTHCODE'])
+  puts 'Payment verified'
+rescue PaytrailClient::InvalidPaymentError
+  puts 'Could not verify payment'
+end
+
 ```
 
 ## Contributing

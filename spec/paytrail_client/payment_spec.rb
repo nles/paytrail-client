@@ -1,5 +1,6 @@
 describe PaytrailClient::Payment do
   it { is_expected.to respond_to(:create) }
+  it { is_expected.to respond_to(:verify_payment!) }
 
   describe '.create', :vcr do
     context 'minimal set of data' do
@@ -19,5 +20,20 @@ describe PaytrailClient::Payment do
         expect(response['token']).not_to be_nil
       end
     end
+  end
+
+  describe '.verify_payment!' do
+    context 'on valid payment' do
+      it 'does not raise' do
+        expect { described_class.verify_payment!(15153, 1176557554, '012345ABCDE', '1', '555E0C0DE304938AACA5D594DB72F315')}.not_to raise_error
+      end
+    end
+
+    context 'on invalid payment' do
+      it 'raises error' do
+        expect { described_class.verify_payment!(15153, 1176557557, '012345ABCDE', '1', '555E0C0DE304938AACA5D594DB72F315')}.to raise_error(PaytrailClient::InvalidPaymentError)
+      end
+    end
+
   end
 end

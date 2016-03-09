@@ -9,9 +9,9 @@ describe PaytrailClient::Helpers do
                nested_snake: { ve_no_m: true },
                arr_ay: [{ key: 'val1' }, { key_two: 'val2' }
                ])).to eq(
-               'snakeCase' => 'value',
-               'nestedSnake' => { 'veNoM' => true },
-               'arrAy' => [{ 'key' => 'val1' }, { 'keyTwo' => 'val2' }])
+                 'snakeCase' => 'value',
+                 'nestedSnake' => { 'veNoM' => true },
+                 'arrAy' => [{ 'key' => 'val1' }, { 'keyTwo' => 'val2' }])
     end
   end
 end
