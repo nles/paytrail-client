@@ -1,6 +1,6 @@
 # paytrail-client
 
-[![Build Status](https://travis-ci.org/anakinj/paytrail-client.svg?branch=master)](https://travis-ci.org/anakinj/paytrail-client) [![Code Climate](https://codeclimate.com/github/anakinj/paytrail-client/badges/gpa.svg)](https://codeclimate.com/github/anakinj/paytrail-client) [![Test Coverage](https://codeclimate.com/github/anakinj/paytrail-client/badges/coverage.svg)](https://codeclimate.com/github/anakinj/paytrail-client/coverage)
+[![Build Status](https://travis-ci.org/anakinj/paytrail-client.svg?branch=master)](https://travis-ci.org/anakinj/paytrail-client) [![Code Climate](https://codeclimate.com/github/anakinj/paytrail-client/badges/gpa.svg)](https://codeclimate.com/github/anakinj/paytrail-client) [![Test Coverage](https://codeclimate.com/github/anakinj/paytrail-client/badges/coverage.svg)](https://codeclimate.com/github/anakinj/paytrail-client/coverage) [![Gem Version](https://badge.fury.io/rb/paytrail-client.svg)](https://badge.fury.io/rb/paytrail-client)
 
 Paytrail client for the Paytrail API. Please refer to the [Paytrail documentation](http://docs.paytrail.com/) for more information.
 
