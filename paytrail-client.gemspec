@@ -10,21 +10,23 @@ Gem::Specification.new do |spec|
   spec.email         = ['antmanj@gmail.com']
 
   spec.summary       = 'Simple paytrail client'
-  spec.description   = 'Client for querying the Paytrail REST API'
-  spec.homepage      = 'https://github.com/antmanj/paytrail-client'
+  spec.description   = 'Client for consuming the Paytrail API'
+  spec.homepage      = 'https://github.com/anakinj/paytrail-client'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
-  spec.bindir        = 'exe'
   spec.require_paths = ['lib']
 
-  spec.add_runtime_dependency 'rest-client'
+  spec.required_ruby_version = '>= 1.9'
+
+  spec.add_runtime_dependency 'rest-client', '~> 1.8'
 
   spec.add_development_dependency 'bundler', '~> 1.10'
   spec.add_development_dependency 'rake', '~> 10.0'
-  spec.add_development_dependency 'pry'
-  spec.add_development_dependency 'webmock'
-  spec.add_development_dependency 'vcr'
-  spec.add_development_dependency 'rspec'
-  spec.add_development_dependency 'simplecov'
+  spec.add_development_dependency 'pry', '~> 0.10'
+  spec.add_development_dependency 'webmock', '~> 1.24'
+  spec.add_development_dependency 'vcr', '~> 3.0'
+  spec.add_development_dependency 'rspec', '~> 3.4'
+  spec.add_development_dependency 'simplecov', '~> 0.11'
+  spec.add_development_dependency 'codeclimate-test-reporter', '~> 0.3.0'
 end

@@ -1,6 +1,8 @@
 # paytrail-client
 
-[![Build Status](https://travis-ci.org/anakinj/paytrail-client.svg?branch=master)](https://travis-ci.org/anakinj/paytrail-client)
+[![Build Status](https://travis-ci.org/anakinj/paytrail-client.svg?branch=master)](https://travis-ci.org/anakinj/paytrail-client) [![Code Climate](https://codeclimate.com/github/anakinj/paytrail-client/badges/gpa.svg)](https://codeclimate.com/github/anakinj/paytrail-client) [![Test Coverage](https://codeclimate.com/github/anakinj/paytrail-client/badges/coverage.svg)](https://codeclimate.com/github/anakinj/paytrail-client/coverage)
+
+Paytrail client for the Paytrail API. Please refer to the [Paytrail documentation](http://docs.paytrail.com/) for more information.
 
 ## Installation
 
@@ -10,15 +12,33 @@ Add this line to your application's Gemfile:
 gem 'paytrail-client'
 ```
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install paytrail-client
-
 ## Usage
+
+```ruby
+require 'paytrail-client'
+
+# Configure the client with your merchant credentials
+PaytrailClient.configure do |config|
+  config.merchant_id     = 12345
+  config.merchant_secret = 'your_merchant_secret'
+end
+
+# Call Paytrail API for a payment token.
+# The client supports passing the object keys as snake_case or camelCase.
+token = PaytrailClient::Payment.create(order_number: '1234',
+                               currency: 'EUR',
+                               locale: 'en_US',
+                               url_set: {
+                                 success: 'http://www.example.org/success',
+                                 failure: 'http://www.example.org/failure',
+                                 notification: 'http://www.example.org/notification'
+                               },
+                               price: 100.50)
+
+# Redirect to received url
+redirect_to(token['url'])
+
+```
 
 ## Contributing
 
